@@ -5,6 +5,10 @@ public class TarjetaCreditoAdapter implements MedioPago {
         this.tarjeta = tarjeta;
     }
 
+    public TarjetaCredito getTarjeta() {
+        return tarjeta;
+    }
+
     @Override
     public void pagar(Huesped huesped, double monto) {
         String numero = huesped.getNumeroTarjeta();

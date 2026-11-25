@@ -7,6 +7,14 @@ public class Reserva {
         this.montoTotal = montoTotal;
     }
 
+    public Huesped getHuesped() {
+        return huesped;
+    }
+
+    public double getMontoTotal() {
+        return montoTotal;
+    }
+
     public void pagarCon(MedioPago medio) {
         medio.pagar(huesped, montoTotal);
     }
