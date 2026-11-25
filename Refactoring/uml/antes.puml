@@ -1,0 +1,40 @@
+@startuml refactoring_antes
+skinparam classAttributeIconSize 0
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam linetype ortho
+title Refactoring – Modelo ANTES (con mal olor)
+
+class Videojuego {
+  - personajes : List<Personaje>
+  + personajeConMasDaño() : Personaje
+  + imprimirInfo(p : Personaje) : void
+}
+
+class Personaje {
+  - nombre : String
+  - daño : double
+  + getNombre() : String
+  + getDaño() : double
+  + getTipoHabilidad() : TipoHabilidad
+}
+
+interface TipoHabilidad {
+  + calcularDaño(daño : double) : double
+}
+
+class HabilidadMagica
+class HabilidadCuerpoACuerpo
+
+Videojuego "1" o-- "0..*" Personaje : personajes
+Personaje "*" --> "1" TipoHabilidad : tipoHabilidad
+TipoHabilidad <|.. HabilidadMagica
+TipoHabilidad <|.. HabilidadCuerpoACuerpo
+Videojuego ..> HabilidadMagica : <<pregunta getClass()>>
+
+note right of Videojuego
+  imprimirInfo() hace
+  if (getClass() == HabilidadMagica.class)
+  → Switch Statements
+end note
+@enduml

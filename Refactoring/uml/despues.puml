@@ -1,0 +1,60 @@
+@startuml refactoring_despues
+skinparam classAttributeIconSize 0
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam linetype ortho
+title Refactoring – Modelo DESPUÉS (Replace Conditional with Polymorphism / Strategy)
+
+class Videojuego <<Cliente>> {
+  - personajes : List<Personaje>
+  + agregarPersonaje(p : Personaje) : void
+  + personajeConMasDaño() : Personaje
+  + imprimirInfo(p : Personaje) : void
+}
+
+class Personaje <<Contexto>> {
+  - nombre : String
+  - daño : double
+  + Personaje(nombre : String, daño : double, tipo : TipoHabilidad)
+  + calcularDañoTotal() : double
+  + describirHabilidad() : String
+  + getNombre() : String
+  + getDaño() : double
+  + setTipoHabilidad(tipo : TipoHabilidad) : void
+}
+
+interface TipoHabilidad <<Estrategia>> {
+  + calcularDaño(dañoBase : double) : double
+  + getNombre() : String
+  + getDescripcion() : String
+}
+
+class HabilidadMagica <<EstrategiaConcreta>> {
+  + calcularDaño(dañoBase : double) : double
+  + getNombre() : String
+  + getDescripcion() : String
+}
+
+class HabilidadCuerpoACuerpo <<EstrategiaConcreta>> {
+  + calcularDaño(dañoBase : double) : double
+  + getNombre() : String
+  + getDescripcion() : String
+}
+
+class HabilidadADistancia <<EstrategiaConcreta>> {
+  + calcularDaño(dañoBase : double) : double
+  + getNombre() : String
+  + getDescripcion() : String
+}
+
+Videojuego "1" o-- "0..*" Personaje : personajes
+Personaje "*" --> "1" TipoHabilidad : tipoHabilidad
+TipoHabilidad <|.. HabilidadMagica
+TipoHabilidad <|.. HabilidadCuerpoACuerpo
+TipoHabilidad <|.. HabilidadADistancia
+
+note bottom of HabilidadADistancia
+  Tipo nuevo agregado sin
+  modificar Videojuego ni Personaje
+end note
+@enduml
