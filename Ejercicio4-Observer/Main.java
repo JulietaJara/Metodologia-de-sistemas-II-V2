@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// ===== Interfaz Observador =====
+
 interface Observador {
     void actualizar(Sensor sensor);
 }
 
-// ===== Sujeto (clase abstracta): conoce a sus observadores =====
+
 abstract class Sensor {
     private final String nombre;
     private final String unidad;
@@ -32,7 +32,7 @@ abstract class Sensor {
         }
     }
 
-    // Cada sensor actualiza su valor de forma independiente
+   
     public void setValor(double nuevoValor) {
         this.valor = nuevoValor;
         notificar();
@@ -43,7 +43,7 @@ abstract class Sensor {
     public double getValor()  { return valor; }
 }
 
-// ===== Sujetos concretos =====
+
 class SensorTemperatura extends Sensor {
     public SensorTemperatura() { super("Temperatura", "°C"); }
 }
@@ -57,7 +57,7 @@ class SensorLuminosidad extends Sensor {
     public SensorLuminosidad() { super("Luminosidad", "lux"); }
 }
 
-// ===== Observadores concretos (paneles) =====
+
 class PanelPrincipal implements Observador {
     @Override
     public void actualizar(Sensor s) {
@@ -85,7 +85,7 @@ class RegistroConsola implements Observador {
     }
 }
 
-// ===== Cliente =====
+
 public class Main {
     public static void main(String[] args) {
         Sensor temp = new SensorTemperatura();
@@ -96,7 +96,7 @@ public class Main {
         Observador alertasCo2  = new PanelAlertas(1000);
         Observador log = new RegistroConsola();
 
-        // El usuario activa los paneles que quiere
+        
         temp.agregarObservador(principal);
         temp.agregarObservador(alertasTemp);
         temp.agregarObservador(log);
@@ -108,7 +108,7 @@ public class Main {
         temp.setValor(35);
         co2.setValor(1200);
 
-        // El usuario desactiva el log en tiempo real
+        
         temp.quitarObservador(log);
         System.out.println("--- Log desactivado ---");
         temp.setValor(28);
