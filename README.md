@@ -8,7 +8,7 @@
  
 **Docente:** Edith Rocio Castillo Yauri
  
-Repositorio con el código Java de los ejercicios de **patrones de diseño** y **refactoring** del trabajo práctico. Cada ejercicio resuelve el problema planteado aplicando el patrón correspondiente, buscando un diseño claro, reutilizable y con bajo acoplamiento. Los diagramas UML y las respuestas teóricas (incluido DDD) están en el PDF de la entrega.
+Repositorio que contiene el código Java de los ejercicios de patrones de diseño y refactoring del trabajo práctico. Cada ejercicio aborda el problema planteado aplicando el patrón correspondiente, buscando un diseño claro, reutilizable y de bajo acoplamiento. Además, el repositorio incluye los diagramas UML de cada ejercicio. En el PDF de la entrega se encuentran también los diagramas UML, junto con las respuestas teóricas, incluido el tema de DDD (Domain-Driven Design).
  
 ## Contenido
  
