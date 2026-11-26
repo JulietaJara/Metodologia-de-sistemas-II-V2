@@ -13,7 +13,7 @@ public abstract class Personaje {
         this.defensa = defensa;
     }
 
-    // Template Method: define el orden general del combate.
+    // Template Method
     public final void combatir(Enemigo enemigo) {
 
         if (vida <= 0 || !enemigo.estaVivo()) {
@@ -30,7 +30,6 @@ public abstract class Personaje {
         despuesDelCombate();
     }
 
-    // Pasos que cada tipo de personaje debe implementar.
     protected abstract void prepararCombate();
 
     protected abstract void posicionarse();
@@ -53,7 +52,7 @@ public abstract class Personaje {
         }
     }
 
-    // Hook: comportamiento opcional después del combate.
+    // Hook
     protected void despuesDelCombate() {
     }
 
