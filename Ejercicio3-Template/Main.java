@@ -34,7 +34,7 @@ public class Main {
         Enemigo dragon1 = new Enemigo("Dragón", 100, 10);
         Enemigo dragon2 = new Enemigo("Dragón oscuro", 120, 15);
 
-        // Ejecución de los combates.
+
         guerrero.combatir(dragon1);
 
         mago.combatir(dragon2);
