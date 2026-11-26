@@ -1,8 +1,10 @@
 # Metodología de Sistemas II – TP Integrador (Segunda parte)
  
 **UTN Avellaneda – Tecnicatura Universitaria en Programación**
-**Grupo:** 6 · 
-**Integrantes:** Di Bona, Fabian - Barrio, Malena - Jara, Julieta - Lopez, Matias - Roig, Matias - Moya, Michael · 
+**Grupo:** 6
+ 
+**Integrantes:** Di Bona, Fabian - Barrio, Malena - Jara, Julieta - Lopez, Matias - Roig, Matias - Moya, Michael
+ 
 **Docente:** Edith Rocio Castillo Yauri
  
 Repositorio con el código Java de los ejercicios de **patrones de diseño** y **refactoring** del trabajo práctico. Cada ejercicio resuelve el problema planteado aplicando el patrón correspondiente, buscando un diseño claro, reutilizable y con bajo acoplamiento. Los diagramas UML y las respuestas teóricas (incluido DDD) están en el PDF de la entrega.
